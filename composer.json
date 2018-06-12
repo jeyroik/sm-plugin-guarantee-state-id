@@ -1,0 +1,9 @@
+{
+  "name": "jeyroik/sm-plugin-guarantee-state-id",
+  "description": "Plugin for jeyroik StateMachine. Guarantee that every state has id.",
+  "autoload": {
+    "psr-4": {
+      "tratabor\\": "src/"
+    }
+  }
+}
