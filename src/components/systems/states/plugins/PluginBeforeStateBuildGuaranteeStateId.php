@@ -2,7 +2,8 @@
 namespace tratabor\components\systems\states\plugins;
 
 use tratabor\components\systems\Plugin;
-use tratabor\interfaces\systems\states\plugins\IPluginBeforeStateBuild;
+use tratabor\interfaces\systems\states\IStateMachine;
+use tratabor\interfaces\systems\states\machines\plugins\IPluginBeforeStateBuild;
 
 /**
  * Class PluginBeforeStateBuildGuaranteeStateId
@@ -13,13 +14,14 @@ use tratabor\interfaces\systems\states\plugins\IPluginBeforeStateBuild;
 class PluginBeforeStateBuildGuaranteeStateId extends Plugin implements IPluginBeforeStateBuild
 {
     /**
+     * @param IStateMachine $machine
      * @param array $stateConfig
-     * @param string $fromState
-     * @param string $stateId
+     * @param $fromStateId
+     * @param $stateId
      *
      * @return array
      */
-    public function __invoke($stateConfig = [], $fromState = '', $stateId = '')
+    public function __invoke(IStateMachine &$machine, $stateConfig, $fromStateId, $stateId)
     {
         $stateId = $stateId
             ?: (
@@ -27,6 +29,6 @@ class PluginBeforeStateBuildGuaranteeStateId extends Plugin implements IPluginBe
                 ?? sha1(json_encode($stateConfig))
             );
 
-        return [$stateConfig, $fromState, $stateId];
+        return [$stateConfig, $fromStateId, $stateId];
     }
 }
