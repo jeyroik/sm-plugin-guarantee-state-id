@@ -3,7 +3,7 @@ namespace jeyroik\extas\components\systems\states\plugins;
 
 use jeyroik\extas\components\systems\Plugin;
 use jeyroik\extas\interfaces\systems\states\IStateMachine;
-use jeyroik\extas\interfaces\systems\states\machines\plugins\IPluginBeforeStateBuild;
+use jeyroik\extas\interfaces\systems\states\machines\plugins\IPluginStateBuildBefore;
 
 /**
  * Class PluginBeforeStateBuildGuaranteeStateId
@@ -11,7 +11,7 @@ use jeyroik\extas\interfaces\systems\states\machines\plugins\IPluginBeforeStateB
  * @package jeyroik\extas\components\systems\states\plugins
  * @author Funcraft <me@funcraft.ru>
  */
-class PluginBeforeStateBuildGuaranteeStateId extends Plugin implements IPluginBeforeStateBuild
+class PluginStateBuildGuaranteeStateIdBefore extends Plugin implements IPluginStateBuildBefore
 {
     /**
      * @param IStateMachine $machine
