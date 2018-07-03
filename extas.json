@@ -1,0 +1,12 @@
+{
+  "title": "Guarantee State ID",
+  "description": "Guarantee id for each state.",
+  "schema": "1.0",
+  "plugins": [
+    {
+      "class": "jeyroik\\extas\\components\\systems\\states\\plugins\\PluginStateBuildBeforeGuaranteeStateId",
+      "stage": "state.build.before"
+    }
+  ],
+  "extensions": []
+}
