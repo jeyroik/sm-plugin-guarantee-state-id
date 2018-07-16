@@ -27,8 +27,7 @@ class PluginStateBuildBeforeGuaranteeStateId extends Plugin implements IPluginSt
     {
         $stateId = $stateId
             ?: (
-                $stateConfig['id']
-                ?? sha1(json_encode($stateConfig))
+                $stateConfig['id'] ?? sha1(json_encode($stateConfig))
             );
 
         return [$stateConfig, $fromStateId, $stateId];
